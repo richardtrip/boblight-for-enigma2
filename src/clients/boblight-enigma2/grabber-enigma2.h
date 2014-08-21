@@ -57,6 +57,7 @@
 #define PALLAS      0
 #define VULCAN      0
 #define XILLEON     0
+#define BRCM7241    7241
 #define BRCM7325    7325
 #define BRCM7335    7335
 #define BRCM7346    7346

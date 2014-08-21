@@ -1154,7 +1154,12 @@ bool CGrabber::detectSTB()
 			char buf[32];
 			while (fgets(buf, sizeof(buf), file))
 			{
-				if (strstr(buf,"7400"))
+				if (strstr(buf,"7241"))
+				{
+					stb_type = BRCM7241;
+					break;
+				}
+				else if (strstr(buf,"7400"))
 				{
 					stb_type = BRCM7400;
 					break;
@@ -1296,6 +1301,7 @@ bool CGrabber::detectSTB()
 			chr_luma_register_offset = 0x34;
 			mem2memdma_register = 0;
 			break;
+		case BRCM7241:
 		case BRCM7424:
 		case BRCM7425:
 			registeroffset = 0x10600000;
